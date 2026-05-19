@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/container-queries";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --university-bg: #050505;
+  --university-panel: rgba(255, 255, 255, 0.04);
+  --university-panel-strong: rgba(255, 255, 255, 0.08);
+  --university-border: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  html {
+    background: var(--university-bg);
+  }
+
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at top, rgba(44, 44, 44, 0.45), transparent 34%),
+      linear-gradient(180deg, #090909 0%, #050505 52%, #020202 100%);
+    color: rgb(245 245 245);
+  }
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--university-border);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+  img[loading="lazy"] {
+    clip-path: inset(0.6px);
+  }
+}
+
+a,
+input,
+button {
+  @apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black;
+}
+
+input::placeholder {
+  color: rgb(115 115 115);
+}
+
+.prose {
+  color: rgb(229 229 229);
+}
+
+.prose a {
+  color: white;
+}
+
+.prose strong,
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: white;
+}
