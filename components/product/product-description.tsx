@@ -1,4 +1,3 @@
-import { AddToCart } from "components/cart/add-to-cart";
 import Price from "components/price";
 import Prose from "components/prose";
 import { Product } from "lib/shopify/types";
@@ -23,7 +22,9 @@ export function ProductDescription({ product }: { product: Product }) {
           html={product.descriptionHtml}
         />
       ) : null}
-      <AddToCart product={product} />
+      <div className="rounded-2xl border border-dashed border-neutral-300 px-4 py-4 text-sm text-neutral-500 dark:border-neutral-700 dark:text-neutral-400">
+        Checkout is not available in this static export preview.
+      </div>
     </>
   );
 }

@@ -3,7 +3,6 @@ import {
   MagnifyingGlassIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
-import CartModal from "components/cart/modal";
 import type { UniversityMarketplaceData } from "lib/university/categories";
 import Form from "next/form";
 import Link from "next/link";
@@ -59,9 +58,12 @@ export function UniversityHeader({ marketplace }: UniversityHeaderProps) {
         </Form>
 
         <div className="flex items-center gap-2 text-neutral-300">
-          <div className="hidden lg:block">
-            <CartModal />
-          </div>
+          <Link
+            href="/courses"
+            className="hidden rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-neutral-300 transition hover:bg-white/[0.08] hover:text-white lg:inline-flex"
+          >
+            Course library
+          </Link>
           <Link
             href="/search?q=Profile"
             className="hidden h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] transition hover:bg-white/[0.08] lg:inline-flex"

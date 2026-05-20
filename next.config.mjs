@@ -11,9 +11,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  experimental: {
-    cacheComponents: true,
-  },
   turbopack: {
     root: __dirname,
   },

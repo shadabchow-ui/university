@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "prebuild": "node scripts/generate-static-sitemap.mjs",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
